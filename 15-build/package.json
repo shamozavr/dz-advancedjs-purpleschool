@@ -1,0 +1,14 @@
+{
+  "name": "15-build",
+  "version": "1.0.0",
+  "description": "15-build HomeWork",
+  "main": "index.mjs",
+  "scripts": {
+    "live": "live-server",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "rollup": "^4.14.1"
+  }
+}
