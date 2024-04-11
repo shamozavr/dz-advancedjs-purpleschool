@@ -3,23 +3,27 @@ header.classList.add('header');
 header.innerHTML = 'Your Coordinates';
 document.body.insertBefore(header, document.querySelector('script'));
 
-function getCoordinates () {
+function getCoordinates() {
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition((position) => {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
       if (!latitude || !longitude) {
-        reject (new Error('ошибка получения координат'))
+        reject(new Error('ошибка получения координат'))
       }
-      resolve ([latitude, longitude])
-    });
+      resolve([latitude, longitude])
+      },
+      (error) => {
+        reject(new Error(error.message))
+      }
+    );
   });
 }
 
 getCoordinates().then(coords => {
   const coordinates = document.createElement('div');
   coordinates.classList.add('coordinates');
-  
+
   coords.forEach((el) => {
     const coordinate = document.createElement('span');
     coordinate.classList.add('coordinate');
