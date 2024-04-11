@@ -9,12 +9,14 @@ for (let i = 0; i < 5; i++) {
   wrapper.append(button);
 }
 
+const buttons = document.querySelectorAll('button');
+
 const counter = document.createElement('div');
 counter.innerHTML = 0;
 document.body.insertBefore(counter, script);
 
 wrapper.addEventListener('click', (evt) => {
-  [...wrapper.children].map(el => el.innerHTML = 'Нажми меня');
+  [...buttons].map(el => el.innerHTML = 'Нажми меня');
   evt.target.innerHTML = 'Нажата';
   counter.innerHTML = Number(counter.innerHTML) + 1;
 })
