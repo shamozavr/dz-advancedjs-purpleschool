@@ -9,7 +9,7 @@ for (let i = 0; i < 5; i++) {
   wrapper.append(button);
 }
 
-const buttons = document.querySelectorAll('button');
+const buttons = wrapper.querySelectorAll('button');
 
 const counter = document.createElement('div');
 counter.innerHTML = 0;
